@@ -1,2 +1,11 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+def form_tree(token_list):
+    left=get_number(token_list)
+    token=get_operator(token_list)
+    if token:
+        right=form_tree(token_list)
+        return Tree(token,left,right)
+    return left
+    
